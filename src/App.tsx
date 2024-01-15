@@ -10,7 +10,7 @@ function App() {
     <>
       {/* <Question1 /> */}
       {/* <Question2 /> */}
-      <Question3 />
+      {/* <Question3 /> */}
     </>
   );
 }
