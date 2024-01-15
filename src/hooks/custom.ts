@@ -1,3 +1,5 @@
-const useCustom = (fn: () => void) => {};
+const useCustom = (fn: () => void) => {
+  fn;
+};
 
 export default useCustom;
