@@ -1,39 +1,15 @@
-import { FunctionComponent } from "react";
-import { ItemType } from "../types";
-
 export const Question2 = () => {
-  const items: ItemType[] = [
-    { id: 1, label: "Block 1" },
-    { id: 2, label: "Block 2" },
-    { id: 3, label: "Block 3" },
-    { id: 4, label: "Block 4" },
-    { id: 5, label: "Block 5" },
-  ];
+  function count() {
+    let i: number;
 
-  return (
-    <>
-      <div>
-        <input type="checkbox" />
-        Select All
-      </div>
+    for (i = 0; i < 10; i += 1) {
+      setTimeout(() => {
+        console.log(i);
+      }, i * 100);
+    }
+  }
 
-      <div className="item-list">
-        {items.map((item) => {
-          return <Item key={item.id} item={item} />;
-        })}
-      </div>
-    </>
-  );
-};
+  count();
 
-const Item: FunctionComponent<{ item: ItemType }> = (props) => {
-  return (
-    <div className="item" key={props.item.id}>
-      <div>
-        <input type="checkbox" />
-      </div>
-
-      <div>{props.item.label}</div>
-    </div>
-  );
+  return <></>;
 };
