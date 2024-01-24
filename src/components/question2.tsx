@@ -1,15 +1,32 @@
-export const Question2 = () => {
-  function count() {
-    let i: number;
+import { useState } from "react";
+import useCustom from "../hooks/custom";
 
-    for (i = 0; i < 10; i += 1) {
-      setTimeout(() => {
-        console.log(i);
-      }, i * 100);
-    }
-  }
+export const Question3 = () => {
+  const [isOpen, setIsOpen] = useState(true);
 
-  count();
+  return (
+    <div>
+      <div style={{ marginBottom: "20px" }}>
+        {isOpen ? <CountComponent /> : null}
+      </div>
 
-  return <></>;
+      <button onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? "Close" : "Show"}
+      </button>
+    </div>
+  );
+};
+
+const CountComponent = () => {
+  const [count, setCount] = useState(0);
+  useCustom(() => console.log(`count is ${count}`));
+
+  return (
+    <>
+      <div>{count}</div>
+      <div>
+        <button onClick={() => setCount(count + 1)}>Count Up</button>
+      </div>
+    </>
+  );
 };
