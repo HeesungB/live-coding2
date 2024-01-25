@@ -1,7 +1,7 @@
 import { useState } from "react";
 import useCustom from "../hooks/custom";
 
-export const Question3 = () => {
+export const Question2 = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
